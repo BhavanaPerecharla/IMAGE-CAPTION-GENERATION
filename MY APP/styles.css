@@ -1,0 +1,316 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    line-height: 1.4;
+}
+
+head {
+    text-align: center;
+    padding: 1em 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for header */
+    position: fixed; /* Fix the header at the top */
+    width: 100%; /* Full width */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+head img {
+    max-width: 100px; /* Adjust size as needed */
+    max-height: 100px; /* Ensure height matches width for a square shape */
+    display: block;
+    margin: 0 auto;
+    object-fit: cover; /* Prevent distortion */
+}
+
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+header h1 {
+    margin: 10px 0;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #4285f4;
+    border: 1px solid #4285f4;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    max-width: 900px; /* Width of the container */
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4285f4;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid #4285f4;
+}
+
+.slide {
+    padding: 50px 0;
+    text-align: center;
+    border: 2px solid #4285f4;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+.slide h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.feature
+ {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for each quality item */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+.feature h3,
+.benefits h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #FF5733; /* Custom color for headings */
+    text-decoration: underline; /* Underline for the qualities */
+}
+
+.feature ul,
+.benefits ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.feature li,
+.benefits li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.feature li strong,
+.benefits li strong {
+    color: #fff;
+}
+
+.feature:hover,
+.benefits:hover {
+    transform: scale(1.05);
+}
+
+.feature p,
+.benefits p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.about-section {
+    padding: 50px 20px;
+    text-align: left;
+    border: 2px solid #4285f4;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.qa-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.question-box,
+.answer-box {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.question-box h3 {
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.answer-box p,
+.answer-box ol,
+.answer-box ul {
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.createdby-section {
+    padding: 50px 20px;
+    text-align: center;
+    border: 2px solid #4285f4;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.createdby-section h2 {
+    color: #4285f4;
+    font-size: 48px;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 2px solid #4285f4;
+    padding-bottom: 10px;
+}
+
+.developer-info {
+    margin-top: 30px;
+}
+
+.developer-names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.developer-names span {
+    color: #fff;
+    font-size: 36px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0 20px;
+    border: 2px solid #4285f4;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.additional-info {
+    margin-top: 20px;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.additional-info p {
+    margin: 10px 0;
+}
+
+.prediction-section {
+    padding: 100px 20px;
+    text-align: center;
+    border: 2px solid #4285f4;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.prediction-section h2 {
+    color: #4285f4;
+    font-size: 48px;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 2px solid #4285f4;
+    padding-bottom: 10px;
+}
+
+.prediction-section p {
+    margin-top: 20px;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#predictionForm {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#imageUpload {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+button {
+    background-color: #4285f4;
+    color: #fff;
+    border: 1px solid #4285f4;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.result-container {
+    margin-top: 30px;
+}
+
+#predictedCaption {
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+}
+
+#predictedImage {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #4285f4;
+    border-radius: 10px;
+}
+
+/* Keyframes for the zoomIn animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

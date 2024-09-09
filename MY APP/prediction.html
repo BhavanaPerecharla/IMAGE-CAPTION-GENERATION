@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Prediction Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="createdby.html">Created By</a>
+    </nav>
+    <div class="prediction-section">
+        <h2>WELCOME TO THE PREDICTION PAGE</h2>
+
+        <p>UPLOAD THE PICTURE TO GET CAPTION</p>
+
+        <form id="predictionForm" enctype="multipart/form-data">
+            <label for="imageUpload">Upload an Image:</label>
+            <input type="file" id="imageUpload" name="image" accept="image/*" required>
+            <button type="button" onclick="predictCaption()">Predict</button>
+        </form>
+
+        <div id="resultContainer" class="result-container" style="display: none;">
+            <p id="predictedCaption"></p>
+            <img id="predictedImage" style="display: none;">
+        </div>
+
+    </div>
+
+    <script>
+        async function predictCaption() {
+            const form = document.getElementById('predictionForm');
+            const formData = new FormData(form);
+        
+            try {
+                const response = await fetch('http://localhost:5000/predict', { // Ensure this matches your Flask server URL
+                    method: 'POST',
+                    body: formData
+                });
+        
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+        
+                const result = await response.json();
+                
+                if (result.error) {
+                    throw new Error(result.error);
+                }
+        
+                document.getElementById('predictedCaption').textContent = result.caption;
+        
+                const fileInput = document.getElementById('imageUpload');
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('predictedImage').src = e.target.result;
+                    document.getElementById('predictedImage').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+        
+                document.getElementById('resultContainer').style.display = 'block';
+            } catch (error) {
+                console.error('Error:', error);
+                alert(`An error occurred: ${error.message}`);
+            }
+        }
+        
+        
+    </script>
+</body>
+
+</html>
